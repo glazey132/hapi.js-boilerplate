@@ -15,3 +15,9 @@ const server = new Hapi.server({
     console.log(err);
   }
 })();
+
+server.route({
+  method: 'GET',
+  path: '/',
+  handler: () => 'Hello World!'
+});
