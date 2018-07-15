@@ -22,6 +22,18 @@ const server = new hapi.server({
 });
 
 const init = async () => {
+  await server.register({
+    plugin: graphiqlHapi,
+    options: {
+      path: '/graphiql',
+      graphiqlOptions: {
+        endpointURL: '/graphql'
+      },
+      route: {
+        cors: true
+      }
+    }
+  });
   server.route([
     {
       method: 'GET',
