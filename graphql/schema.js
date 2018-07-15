@@ -11,7 +11,7 @@ const RootQuery = new GraphQLObjectType({
       type: PaintingType,
       args: { id: { type: GraphQLString } },
       resolve(parent, args) {
-        return Painting.findById(ars.id);
+        return Painting.findById(args.id);
       }
     }
   }
