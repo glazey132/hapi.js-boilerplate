@@ -10,6 +10,7 @@
   "author": "Alex Glaze",
   "license": "ISC",
   "dependencies": {
-    "hapi": "^17.5.2"
+    "hapi": "^17.5.2",
+    "mongoose": "^5.2.3"
   }
 }

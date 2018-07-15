@@ -1,4 +1,15 @@
 const hapi = require('hapi');
+const mongoose = require('mongoose');
+
+console.log('process.env.mdb:  ', process.env.MONGODB_URI);
+mongoose.connect(
+  process.env.MONGODB_URI,
+  { useNewUrlParser: true }
+);
+
+mongoose.connection.once('open', () => {
+  console.log(`Connected to MongoDB`);
+});
 
 const server = new hapi.server({
   host: 'localhost',
