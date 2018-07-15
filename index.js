@@ -35,10 +35,10 @@ const init = async () => {
     }
   });
 
-  await server.registter({
+  await server.register({
     plugin: graphqlHapi,
     options: {
-      path: 'graphql',
+      path: '/graphql',
       graphqlOptions: {
         schema
       },
