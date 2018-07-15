@@ -1,20 +1,16 @@
-'use strict';
+const hapi = require('hapi');
 
-const Hapi = require('hapi');
-
-const server = new Hapi.server({
+const server = new hapi.server({
   host: 'localhost',
   port: 8080
 });
 
-(async () => {
-  try {
-    await server.start();
-    console.log(`Hapi server started at: ${server.info.uri} (^_^)`);
-  } catch (err) {
-    console.log(err);
-  }
-})();
+const init = async () => {
+  await server.start();
+  console.log(`Hapi server started at: ${server.info.uri} (^_^)`);
+};
+
+init();
 
 server.route({
   method: 'GET',
