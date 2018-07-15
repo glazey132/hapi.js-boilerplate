@@ -1,6 +1,9 @@
 const hapi = require('hapi');
 const mongoose = require('mongoose');
 
+const { graphqlHapi, graphiqlHapi } = require('apollo-server-hapi');
+
+const schema = require('./graphql/schema');
 const Painting = require('./models/Painting');
 
 console.log('process.env.mdb:  ', process.env.MONGODB_URI);
