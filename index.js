@@ -34,6 +34,20 @@ const init = async () => {
       }
     }
   });
+
+  await server.registter({
+    plugin: graphqlHapi,
+    options: {
+      path: 'graphql',
+      graphqlOptions: {
+        schema
+      },
+      route: {
+        cors: true
+      }
+    }
+  });
+
   server.route([
     {
       method: 'GET',
