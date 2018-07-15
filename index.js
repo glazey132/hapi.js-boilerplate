@@ -9,7 +9,9 @@ const init = async () => {
   server.route({
     method: 'GET',
     path: '/',
-    handler: () => 'Hello World!'
+    handler: (request, reply) => {
+      return `<h1>My modern API powered by Hapi</h1>`;
+    }
   });
 
   await server.start();
