@@ -6,14 +6,14 @@ const server = new hapi.server({
 });
 
 const init = async () => {
+  server.route({
+    method: 'GET',
+    path: '/',
+    handler: () => 'Hello World!'
+  });
+
   await server.start();
   console.log(`Hapi server started at: ${server.info.uri} (^_^)`);
 };
 
 init();
-
-server.route({
-  method: 'GET',
-  path: '/',
-  handler: () => 'Hello World!'
-});
