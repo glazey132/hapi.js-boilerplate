@@ -67,11 +67,11 @@ const init = async () => {
       method: 'POST',
       path: '/api/v1/paintings',
       handler: (request, reply) => {
-        const { name, url, techniques } = request.payload;
+        const { name, url, technique } = request.payload;
         const painting = new Painting({
           name,
           url,
-          techniques
+          technique
         });
 
         return painting.save();
